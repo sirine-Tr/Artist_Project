@@ -1,26 +1,49 @@
 1.	Clone the Repository :
+   
 git clone https://github.com/yourusername/your-repository-name.git
+
 Note:
+
 Artist_Search_app directory contains the Node.js application.
+
 databaseImportFile folder contains the artists.sql file needed to import data into your PostgreSQL database.
+
 2. Access the Node.js App:
+   
 Navigate to the Artist_Search_app directory, which contains the Node.js application:
+
 cd Artist_Search_app
+
 3. Install Dependencies inside the Artist_Search_app directory:
+   
 npm install
+
 4. Import the Database:
+   
 Note : Ensure that PostgreSQL is installed and running on your machine.
+
 4.1 Create a new database:
+
 createdb -U postgres Artists
+
 Note: Replace Artists with your desired database name if needed.
+
 4.2 Import the data from the SQL file :
+
 psql -U postgres -d Artists -f databaseImportFile/artists.sql
+
 5. Start the Application:
+   
 Note: In the root of the Artist_Search_app directory, start the server
+
 Note 2: Before starting the application, ensure you modify the db.js file with the following details:
+
 •	Replace ‘Artists’ with the name of your PostgreSQL database.
+
 •	Replace 'postgres' with your PostgreSQL username.
+
 •	Replace 'sisy040120' with your PostgreSQL password.
+
 node app.js or nodemon app.js
 
 Architecture Overview
@@ -48,16 +71,26 @@ o	If the artist matching the specified name is found in the database, the API wi
 o	If no artist is found, the API will retrieve random artist names from a JSON source and continue searching until it gathers a list of artists. This list will be saved to the specified CSV file.
 
 Test: 
+
 To test the application, I used Postman.
+
 Endpoint: /api/search-artist
+
 •	Method: GET
+
 •	Query Parameters:
+
 o	name (required): The name of the artist you want to search for.
+
 o	filename (optional): The name of the CSV file where the search results will be saved.
+
 Example :
 http://localhost:3000/api/search-artist?name=Arti&filename=Artist4_results.csv
+
 Notes:
+
 •	Replace Arti with the name of the artist you wish to search for.
+
 •	Replace Artist4_results.csv with the desired name for the CSV file where you want to store the search results.
 
 =>The artist's name exists in the database:
@@ -71,5 +104,7 @@ The result in the CSV file:
 ![ArtistNotExistCSV](https://github.com/user-attachments/assets/96d4f2df-120a-4728-b918-c20076ba3219)
 
 Tutorial Used:
+
 For this project, I followed this tutorial to export data to a CSV file.
+
 https://medium.com/random-thougths/simple-nodejs-script-to-create-10m-record-and-write-into-csv-3e2cd3c2734c
