@@ -24,17 +24,27 @@ Note 2: Before starting the application, ensure you modify the db.js file with t
 node app.js or nodemon app.js
 
 Architecture Overview
+
 This project follows a structured architecture to ensure maintainability and clarity:
+
 •	Model: Defines the data structure and the format used across the application. In this project, the model represents an Artist, encapsulating attributes such as name, mbid, url, image_small, and image.
+
 •	Service: Contains the business logic and data handling operations. The ArtistService manages tasks like searching for artists, retrieving random artists, and exporting results to a CSV file.
+
 •	Controller: Handles incoming HTTP requests and interacts with the service layer. The controller processes requests, utilizes service methods, and sends responses back to the client.
+
 Data: Stores the application's data using the following components:
+
 •	randomArtists.json: Holds a list of artist names for fallback purposes when no search results are found.
+
 •	db.js: Contains the database connection and configuration details, and manages database operations.
 
 Behavior:
+
 •	Search Artist:
+
 o	If the artist matching the specified name is found in the database, the API will return the artist details and save them to the specified CSV file.
+
 o	If no artist is found, the API will retrieve random artist names from a JSON source and continue searching until it gathers a list of artists. This list will be saved to the specified CSV file.
 
 Test: 
