@@ -56,7 +56,8 @@ The result in the CSV file:
 ![ArtistExistCSV](https://github.com/user-attachments/assets/f387e4c3-70b7-41fc-8c07-b6da9e8cd9ef)
 =>The artist's name does not exist in the database:
 ![ArtistNotExist](https://github.com/user-attachments/assets/64add8c8-4201-40cd-999a-a0eb73fabd57)
-The result in the CSV file: 
+The result in the CSV file:
+
 ![ArtistNotExistCSV](https://github.com/user-attachments/assets/96d4f2df-120a-4728-b918-c20076ba3219)
 
 Tutorial Used:
